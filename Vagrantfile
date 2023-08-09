@@ -17,7 +17,7 @@ Vagrant.configure("2") do |config|
       subconfig.vm.provider "virtualbox" do |v|
         v.customize ["modifyvm", :id, "--groups", "/#{cni_N}-Lab"]
         v.name = "#{cni_N}-k8s-m"
-        v.memory = 2048
+        v.memory = 4096
         v.cpus = 2 
         v.linked_clone = true
       end
