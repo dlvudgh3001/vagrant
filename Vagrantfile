@@ -25,8 +25,8 @@ Vagrant.configure("2") do |config|
       subconfig.vm.synced_folder "./", "/vagrant", disabled: true
       subconfig.vm.network "private_network", ip: "192.168.10.10"
       subconfig.vm.network "forwarded_port", guest: 22, host: 50010, auto_correct: true, id: "ssh"
-      subconfig.vm.provision "shell", path: "https://raw.githubusercontent.com/Beas-github/test/master/T2/init_cfg.sh", args: [ N, k8s_V ]
-      subconfig.vm.provision "shell", path: "https://raw.githubusercontent.com/Beas-github/test/master/T2/master.sh", args: [ cni_N ]
+      subconfig.vm.provision "shell", path: "https://raw.githubusercontent.com/dlvudgh3001/vagrant/main/init_cfg.sh?token=GHSAT0AAAAAACGC34WEOR5VLOSU6WRV2I2EZGTEKHQ", args: [ N, k8s_V ]
+      subconfig.vm.provision "shell", path: "https://raw.githubusercontent.com/dlvudgh3001/vagrant/main/master.sh?token=GHSAT0AAAAAACGC34WFLTPPIYRTZSIU5P7QZGTELBA", args: [ cni_N ]
     end
 
 #-----Worker Node Subnet1
@@ -45,8 +45,8 @@ Vagrant.configure("2") do |config|
       subconfig.vm.synced_folder "./", "/vagrant", disabled: true
       subconfig.vm.network "private_network", ip: "192.168.10.10#{i}"
       subconfig.vm.network "forwarded_port", guest: 22, host: "5001#{i}", auto_correct: true, id: "ssh"
-      subconfig.vm.provision "shell", path: "https://raw.githubusercontent.com/Beas-github/test/master/T2/init_cfg.sh", args: [ N, k8s_V ]
-      subconfig.vm.provision "shell", path: "https://raw.githubusercontent.com/Beas-github/test/master/T2/worker.sh"
+      subconfig.vm.provision "shell", path: "https://raw.githubusercontent.com/dlvudgh3001/vagrant/main/init_cfg.sh?token=GHSAT0AAAAAACGC34WEOR5VLOSU6WRV2I2EZGTEKHQ", args: [ N, k8s_V ]
+      subconfig.vm.provision "shell", path: "https://raw.githubusercontent.com/dlvudgh3001/vagrant/main/worker.sh?token=GHSAT0AAAAAACGC34WEPVJQMJLWBIMWGFYKZGTELTQ"
     end
   end
 
